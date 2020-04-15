@@ -19,4 +19,5 @@ jobs:
           name: zcong/go-delay-queue
           username: zcong
           password: ${{ secrets.DOCKER_PASSWORD }}
-          tags: "latest,${{ env.RELEASE_VERSION }}"
+          tag_names: true
+#          tags: "latest,${{ env.RELEASE_VERSION }}"
