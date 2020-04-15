@@ -23,7 +23,7 @@ jobs:
       - name: Publish to Github Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: docker.pkg.github.com/zcong1993/go-delay-queue
+          name: docker.pkg.github.com/zcong1993/go-delay-queue/go-delay-queue
           username: zcong1993
           password: ${{ secrets.GH_REGISTRY_TOKEN }}
           registry: docker.pkg.github.com
