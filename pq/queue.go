@@ -87,3 +87,7 @@ func (pq *Pq) Peek() *Item {
 	}
 	return pq.pq[0]
 }
+
+func (pq *Pq) Size() int {
+	return len(pq.pq)
+}

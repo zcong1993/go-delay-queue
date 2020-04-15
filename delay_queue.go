@@ -25,6 +25,10 @@ type DelayQueue struct {
 	Log *logrus.Logger
 }
 
+type Stats struct {
+	PqSize int
+}
+
 func failOnError(err error, msg string) {
 	if err != nil {
 		log.Fatalf("%s: %s", msg, err)
@@ -193,4 +197,8 @@ func (dq *DelayQueue) Close() {
 	if err != nil {
 		dq.Log.Error("close conn error ", err)
 	}
+}
+
+func (dq *DelayQueue) Stat() Stats {
+	return Stats{PqSize: dq.pq.Size()}
 }

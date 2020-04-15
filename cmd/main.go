@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/sirupsen/logrus"
 
@@ -31,6 +32,18 @@ func main() {
 	if debug == "true" {
 		dq.Log.SetLevel(logrus.DebugLevel)
 	}
+
+	t := time.NewTicker(time.Second * 5)
+	defer t.Stop()
+	go func() {
+		for {
+			select {
+			case <-t.C:
+				dq.Log.WithField("Stats", "pq").Infof("pq size: %d", dq.Stat().PqSize)
+			}
+		}
+	}()
+
 	go func() {
 		sigint := make(chan os.Signal, 1)
 
