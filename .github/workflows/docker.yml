@@ -20,4 +20,11 @@ jobs:
           username: zcong
           password: ${{ secrets.DOCKER_PASSWORD }}
           tag_names: true
-#          tags: "latest,${{ env.RELEASE_VERSION }}"
+      - name: Publish to Github Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: docker.pkg.github.com/zcong1993/go-delay-queue
+          username: zcong1993
+          password: ${{ secrets.GITHUB_REGISTRY_TOKEN }}
+          registry: docker.pkg.github.com
+          tag_names: true
