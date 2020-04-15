@@ -27,6 +27,7 @@ func main() {
 
 	idleConnsClosed := make(chan struct{})
 	dq := delay_queue.NewDelayQueueFromUri(rabbitUrl, workerQueueName, delayQueueName)
+	dq.Log.Infof("running, workerQueueName: %s, delayQueueName: %s", workerQueueName, delayQueueName)
 	if debug == "true" {
 		dq.Log.SetLevel(logrus.DebugLevel)
 	}
