@@ -169,7 +169,6 @@ func (dq *DelayQueue) Publish(msg amqp.Publishing, fireTime time.Time) error {
 
 func (dq *DelayQueue) PublishBytesMsg(msg []byte, fireTime time.Time) error {
 	p := amqp.Publishing{
-		Headers:      amqp.Table{"ts": fireTime.UnixNano()},
 		DeliveryMode: amqp.Persistent,
 		ContentType:  "text/plain",
 		Body:         msg,
