@@ -1,9 +1,6 @@
-# delay-queue
-<!--
-[![Go Report Card](https://goreportcard.com/badge/github.com/zcong1993/delay-queue)](https://goreportcard.com/report/github.com/zcong1993/delay-queue)
--->
+# delay-queue ![Publish to Registry](https://github.com/zcong1993/go-delay-queue/workflows/Publish%20to%20Registry/badge.svg)
 
-> my go grpc project
+> delay message queue base on rabbitmq
 
 ## License
 
