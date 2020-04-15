@@ -25,6 +25,6 @@ jobs:
         with:
           name: docker.pkg.github.com/zcong1993/go-delay-queue
           username: zcong1993
-          password: ${{ secrets.GITHUB_REGISTRY_TOKEN }}
+          password: ${{ secrets.GH_REGISTRY_TOKEN }}
           registry: docker.pkg.github.com
           tag_names: true
